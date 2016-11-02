@@ -1,0 +1,48 @@
+{
+	"simple_en-US": "ok_from_tr",
+	"test": {
+		"simple_en-US": "TESTok_from_tr_test"
+	},
+	"back": "Geri",
+	"create_betslip":"Kupon Yap",
+	"weekday": {
+		"0": "Pazar",
+		"1": "Pazartesi",
+		"2": "Salı",
+		"3": "Çarşamba",
+		"4": "Perşembe",
+		"5": "Cuma",
+		"6": "Cumartesi"
+	},
+	"month": {
+		"0": "Ocak",
+		"1": "Şubat",
+		"2": "Mart",
+		"3": "Nisan",
+		"4": "Mayıs",
+		"5": "Haziran",
+		"6": "Temmuz",
+        "7": "Ağustos",
+        "8": "Eylül",
+        "9": "Ekim",
+        "10": "Kasım",
+        "11": "Aralık"
+	},
+	"no_match":"Şu anda programda maç yok. En yakın zamanda, yeni bülten için tekrar deneyin!",
+    "no_match2":"Şu anda programda başka maç yok. En yakın zamanda, yeni bülten için tekrar deneyin!",
+    "hata_network_1":"Maçlar getirilemedi. Lütfen internet bağlantınızı kontrol edip tekrar deneyin.",
+    "hata":"Hata",
+    "warning":"Bir şey Yanlış",
+    "ok":"Tamam",
+    "rule_at_least_match":"Oynanan maç sayısı en az __MBS__ olmalı!",
+    "rule_no_more_one_match":"Bir kuponda, aynı maça birden fazla oynayamazsın ! __MatchCode__ kodlu maçı kontrol et!",
+    "rule_no_more_one_match_duel":"Bir kuponda, DUELLO da olsa, aynı maça birden fazla oynayamazsın ! __MatchCode__ kodlu maçı kontrol et!",
+    "rule_match_started":"Başllamış maça oynayamazsın! Maç kodu: __MatchCode__ .",
+    "rule_no_match_at_betslip":"Kuponunda hiç maç yok ! Bu şekilde olmaz yalnız !",
+    "close":"Kapat",
+    "other_ratios":"Diğer Oranlar",
+    "ms_baslik":"Mac Sonucu",
+    "my_betslip":"Kuponum"
+
+
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>Tuyo Kupon</title>
+    <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" href="jquery-mobile/jquery.mobile-1.3.2.min.css" />
+
+    <link rel="stylesheet" href="css/masterStyle.css" />
+
+    <script src="jquery-mobile/jquery.js"></script>
+    <script src="jquery-mobile/jquery.mobile-1.3.2.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+
+</head>
+<body>
+<div  id="wait">Wait ekrani daaa
+    <button id="closeWait" onClick="hideWaitScreen()">close</button>
+</div>
+<div  class="popup" id="popup1">Popup ekrani daaa
+    <button id="closePopup1" onClick="hidePopup('#popup1')">close</button>
+</div>
+
+
+<div data-role="page" id="homePage">
+
+    <div data-role="header">
+        <h1>Tuyo Kupon</h1>
+        <div data-role="navbar">
+            <ul >
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Bos buton</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <div data-role="content">
+
+        <ul data-role="listview">
+            <li id="kuponYap"><a   >Kupon Yap</a></li>
+            <li><a href="indexn.html" >Bos buton</a></li>
+        </ul>
+        <h1 id="loadpage">Wellcome</h1>
+
+
+    </div>
+    <div data-role="footer" >
+        <div data-role="navbar">
+            <ul >
+                <li><a href="#">Page</a></li>
+                <li><a href="#">Page</a></li>
+            </ul>
+        </div>
+        <h4>Footer</h4>
+
+    </div>
+</div>
+
+
+</body>
+</html>

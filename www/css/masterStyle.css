@@ -1,0 +1,285 @@
+
+body{
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-user-select: none;
+
+
+}
+* {
+    -webkit-touch-callout:none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust:none;             /* prevent webkit from resizing text to fit */
+    -webkit-tap-highlight-color:rgba(0,0,0,0); /* prevent tap highlight color / shadow */
+    -webkit-user-select:none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+}
+
+#wait
+{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	display:none;	
+	z-index :1001;
+}
+.popup
+{
+	background: url("images/popup-background.jpg") no-repeat scroll center center #FFF;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	display:none;	
+	z-index :1002;
+}
+.popup1
+{
+    background: #FFF;
+    /*position: absolute;*/
+    height: 100%;
+    width: 100%;
+    display:none;
+    z-index :1002;
+}
+#butunOranlar
+{
+    background: #FFF;
+    /*position: fixed;*/
+    height: 100%;
+    width: 100%;
+    display:none;
+    z-index :1002;
+
+
+}
+.diger-oranlar{
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+}
+/*kuponYap.html >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+.oran_wrapper {
+    display: inline-block;
+    border: 1px solid black;
+}
+.ratio_nc_wrapper {
+    display: inline-block;
+    border: 1px solid black;
+}
+
+#betslipMatches
+{
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+    height: 75%;
+}
+
+#betSlipSubmit{
+    height: 5%;
+
+}
+#betslipOuter{
+    /*position:fixed;*/
+    background: darkseagreen;
+    height: 100%;
+    width: 35%;
+
+
+
+}
+#betslipAccount{
+    height: 15%;
+}
+#betslipHeader{
+    height: 5%;
+}
+.betslipRatioField{
+    float: left;
+    border: 1px solid black;
+}
+.betslipRatioMBS1{
+    float: left;
+    border: 1px solid black;
+}
+.betslipRatioMBS2{
+    float: left;
+    border: 1px solid black;
+}
+.betslipRatioMBS3{
+    float: left;
+    border: 1px solid black;
+}
+.betslipRatioMBS4{
+    float: left;
+    border: 1px solid black;
+}
+.betslipRatioRate{
+    float: left;
+    border: 1px solid black;
+}
+.betslipCancelMatch{
+    border: 1px solid black;
+}
+.betslipMatchCode{
+    float: left;
+    border: 1px solid black;
+}
+.betslipMatchTeams{
+    border: 1px solid black;
+}
+
+.oran-button {
+    margin:4px;
+    background-color:#EFEFEF;
+    border-radius:4px;
+    border:1px solid #D0D0D0;
+    overflow:auto;
+    float:left;
+}
+
+.oran-button label {
+    float:left;
+    width:4.0em;
+}
+
+.oran-button label span {
+    text-align:center;
+    padding:3px 0px;
+    display:block;
+}
+
+.oran-button label input {
+    top:-20px;
+    display:none;
+}
+
+.oran-button input:checked + span {
+    background-color:#911;
+    color:#fff;
+}
+/*.oran:link {
+    text-decoration: none;
+    color: #07ade0;
+}*/
+.oran_m{
+    margin:4px;
+    background-color:#EFEFEF;
+    border-radius:4px;
+    border:2px solid #D0D0D0;
+    overflow:auto;
+    float:left;
+
+}
+.oran_m:hover {
+    text-decoration: none;
+    color: #d0cf26;
+    border:2px solid #d0cf26;
+}
+
+.oran{
+    margin:4px;
+    background-color:#EFEFEF;
+    border-radius:4px;
+    border:2px solid #D0D0D0;
+    overflow:auto;
+    float:left;
+
+}
+.oran:hover {
+    text-decoration: none;
+    color: #d0cf26;
+    border:2px solid #d0cf26;
+}
+.oran_selected{
+    text-decoration: none;
+    color: #f4fff6;
+    background-color: rgb(153, 22, 10);
+}
+.ratio_nc{
+    margin:4px;
+    background-color:#EFEFEF;
+    border-radius:4px;
+    border:2px solid #D0D0D0;
+    overflow:auto;
+    float:left;
+
+}
+
+.oran-more {
+    margin:4px;
+    background-color:#EFEFEF;
+    border-radius:4px;
+    border:2px solid #D0D0D0;
+    overflow:auto;
+    float:left;
+}
+.oran-more:hover{
+    text-decoration: none;
+    color: #f4fff6;
+    background-color: rgb(153, 22, 10);
+}
+#maclar{
+    -webkit-overflow-scrolling: touch;
+    z-index: 10;
+    position: absolute;
+    right: 0;
+    width: 65%;
+
+
+}
+
+/* disable shadows for better android performance */
+.ui-body-a,
+.ui-bar-a,
+.ui-btn-up-a,
+.ui-btn-hover-a,
+.ui-btn-down-a,
+
+.ui-body-b,
+.ui-bar-b,
+.ui-btn-up-b,
+.ui-btn-hover-b,
+.ui-btn-down-b,
+
+.ui-body-c,
+.ui-bar-c,
+.ui-btn-up-c,
+.ui-btn-hover-c,
+.ui-btn-down-c,
+
+.ui-body-d,
+.ui-bar-d,
+.ui-btn-up-d,
+.ui-btn-hover-d,
+.ui-btn-down-d,
+
+.ui-body-e,
+.ui-bar-e,
+.ui-btn-up-e,
+.ui-btn-hover-e,
+.ui-btn-down-e,
+
+.ui-shadow-inset,
+.ui-icon-shadow,
+.ui-focus,
+.ui-overlay-shadow,
+.ui-shadow,
+.ui-btn-active,
+* {
+    text-shadow: none !important;
+    box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+}
+
+/*#maclar{*/
+    /*background: #FFF;*/
+    /*position: absolute;*/
+    /*height: 85%;*/
+    /*width: 65%;*/
+
+
+/*}*/
+/*#betslipOuter{*/
+    /*background: #FFF;*/
+    /*position: absolute;*/
+    /*height: 85%;*/
+    /*width: 35%;*/
+/*}*/
+/*kuponYap.html <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/

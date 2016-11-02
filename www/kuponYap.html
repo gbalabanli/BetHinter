@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>Tuyo Kupon</title>
+    <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" href="jquery-mobile/jquery.mobile-1.3.2.min.css" />
+    <link rel="stylesheet" href="css/masterStyle.css" />
+    <script src="jquery-mobile/jquery.js"></script>
+    <script src="jquery-mobile/jquery.mobile-1.3.2.min.js"></script>
+    <script src="js/main.js"></script>
+
+</head>
+<body >
+
+<div data-role="page" id="kuponYap" class="kuponSayfa">
+    <div  class="popup1" id="popupA1" data-position="fixed" data-tap-toggle="false">
+        <div class="headA1"></div>
+        <div class="messageA1">Popup</div>
+        <a class="closeA1" id="closePopupA1">close</a>
+    </div>
+    <div  id="butunOranlar" data-position="fixed" data-tap-toggle="false">
+        <div id="otherHeader" data-role="header" >
+            <h1 id="otherHeaderName" data-i18n='other_ratios'>OTHER RATIOS</h1>
+            <a id="otherClose" data-icon="back" class="ui-btn-right"  ><div  data-i18n='close'>CLOSE</div></a>
+        </div>
+
+        <div data-role="content">
+            <div  class="diger-oranlar">
+                <div class="other-match-info" >
+                    <div id="otherMatchCode"></div>
+                    <div id="otherHour"></div>
+                    <div id="otherMinute"></div>
+                    <div id="otherTeams"></div>
+                    <div id="otherDay"></div>
+                    <div id="otherMonthDay"></div>
+                    <div id="otherMonth"></div>
+                    <div id="otherYear"></div>
+                    <div id="otherLeagueName"></div>
+                </div>
+                <div id="otherRatios">
+                    <!--BURAYA ORANLARA GELECEK-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-role="header" id="create_betslip_head" >
+        <h1 data-i18n="create_betslip">kupon yap</h1>
+        <div data-role="navbar"> </div>
+
+    </div>
+
+    <div data-role="content">
+        <div  id="betslipOuter" data-tap-toggle="false" data-position="fixed" >
+            <!--<div id="betslipHeader">header</div>-->
+            <div data-role="header" id="my_betslip" >
+                <a href="#" data-icon="back" data-rel="back" ><div data-i18n="back"></div></a>
+                <h1 data-i18n="my_betslip">kuponum</h1>
+                <div data-role="navbar"> </div>
+            </div>
+            <div id="betslipMatches">matches</div>
+            <div id="betslipAccount">account</div>
+            <div id="betSlipSubmit"><a href="#" id="makeBetslip" data-i18n="create_betslip">CREATE BETSLIP</a></div>
+        </div>
+        <div id="maclar"></div>
+    </div>
+
+
+    <script>
+
+        $( document ).ready(function() {
+            console.log("js and jquery ready! kuponyap html");
+
+              makeHeightFullPage(".diger-oranlar");
+//            makeHeightFullPage("#betslipOuter");
+
+//            makeHeightFullPage("#maclar");
+//            makeHeightFullPage("#iframe");
+            init();
+//            $("<div ><input type='checkbox' name='checkbox-2' id='checkbox-2' class='custom' /><label for='checkbox-2'>I agree</label></div>").append("#betSlipSubmit");
+
+
+            $(document).on("pageshow","#kuponYap",function(){
+
+                console.log("kupon yap page show");
+
+                    showSpinner();
+                    getMatchesWithAjax(function () {
+                        console.log("error!!!");
+                        showPopup1("#popupA1", i18n.t('hata'), i18n.t('hata_network_1'), i18n.t('ok'));
+                    }, function () {
+
+
+                    $(".oran-more").on("tap", function (event) {
+                        console.log("ORAN MORE IS TAPPED");
+
+                        showPopup( "#butunOranlar");
+
+                        matchCode = $(this).attr('match_code');
+                        console.log("more is tapped match_code:" + matchCode);
+                        showMatchesByAllRatios(matchCode);
+                        jQuery.each( betSlip.matches, function( i, match ) {
+                            if(match.matchCode == matchCode){
+
+                                div = "div[ratio_field='"+match.ratio.ratioField+"']";
+                                console.log("mac secili:"+div);
+                                div2 = $(div);
+                                console.log("null:"+div2==null);
+                                console.log("mbs:"+div2.ratio_MBS);
+                                $(div).addClass("oran_selected");
+                                $(div).attr("selected",true);
+                                index = betSlip.matches.indexOf(match);
+                                console.log("index:"+index);
+                                $(div).attr("timestamp", betSlip.betslipMatchTimeStamps[index]);
+
+//                                reselectMatch( $( "div[ratioField='"+match.ratio.ratioField+"']" ),betSlip.betslipMatchTimeStamps[index] );
+
+                            }
+                        });
+
+                    });
+//                    $("#betslipHeader").append("<div ><input type='checkbox' id='checkbox-4' class='custom' /><label for='checkbox-4'>I agree</label></div>");
+//                    $("#maclar").trigger("create");
+//                    $("#betslipHeader").trigger("create");
+                    hideSpinner();
+                    });
+
+
+            });
+            $( "#makeBetslip" ).on( "tap", function( event ) {
+                makeBetslip(function (warning){
+                    console.log("againest rule!!!");
+                    showPopup1("#popupA1",i18n.t('warning'), warning ,i18n.t('ok'));});
+
+            });
+            $( "#closePopupA1" ).on( "tap", function( event ) {
+                hidePopup1('#popupA1');
+            });
+            $( "#otherClose" ).on( "tap", function( event ) {
+                hidePopup('#butunOranlar');
+            });
+
+
+        });
+
+    </script>
+
+
+</div>
+
+
+</body>
+</html>
